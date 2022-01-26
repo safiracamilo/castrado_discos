@@ -13,7 +13,7 @@
             "id": 2,
             "numero": "2",
             "titulo": "Saudade do Brasil V1",
-            "autor": "Elis Regina",
+            "cantor": "Elis Regina",
             "ano": "1980",
             "status": "Disponivel",
             "emprestado_para": ""
@@ -22,7 +22,7 @@
             "id": 3,
             "numero": "3",
             "titulo": "Saudade do Brasil V2",
-            "autor": "Elis Regina",
+            "cantor": "Elis Regina",
             "ano": "1980",
             "status": "Disponivel",
             "emprestado_para": ""
@@ -30,11 +30,11 @@
         {
             "id": 4,
             "numero": "4",
-            "titulo": "caetanear",
+            "titulo": "Caetanear",
+            "cantor": "Caetano Veloso",
             "ano": "1985",
-            "cantor": "caetano veloso",
-            "emprestado_para": " ",
-            "status": "disponivel"
+            "status": "Disponivel",
+            "emprestado_para": " "
         }
     ]
 }

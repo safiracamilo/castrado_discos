@@ -11,7 +11,23 @@ def listar_discos(status):
         if discos['status'] == status:
             numero = discos['numero']
             titulo = discos['titulo']
-            print(numero, "-", titulo)
+            cantor = discos['cantor']
+            ano = discos['ano']
+            print(numero, "-", titulo, ",", cantor, ",", ano)
+
+def filtrar_discos(cantor):
+    print('*********BUCA POR FILTRO************')
+    with open('C:/Users/SAFIRA/PycharmProjects/castrado_discos/db/discos.json') as b:
+        data = json.load(b)
+
+    print('lista dos discos de:', cantor)
+
+    for discos in data['discos']:
+        if discos['cantor'] == cantor:
+            titulo = discos['titulo']
+            ano = discos['ano']
+            print(titulo,ano)
+
 
 
 def emprestar_disco(numero_emprestar, emprestado_para):
@@ -76,6 +92,7 @@ if __name__ == '__main__':
    print('# 2 - Emprestar Discos      #')
    print('# 3 - Devolver Discos       #')
    print('# 4 - Doar Discos           #')
+   print('# 5 - Busca por filtro      #')
    print('#                           #')
    print('# 9 - Sair                  #')
 
@@ -89,11 +106,9 @@ if __name__ == '__main__':
            numero_do_disco = input('digite o codigo do livro:   ')
            pessoa = input('digite o nome da pessoa que ficara com disco:  ')
            emprestar_disco(int(numero_do_disco), pessoa)
-
       elif resposta == '3':
            id = input('digite o id do disco:  ')
            devolver_disco(int(id))
-
       elif resposta == '4':
           id = input('digite o id do disco:     ')
           print ('Você escolheu a opção doar disco')
@@ -102,8 +117,9 @@ if __name__ == '__main__':
           cantor = input('digite o nome do cantor do disco: ')
           ano = input('digite o ano do disco: ')
           doar_disco(int(id),numero, titulo, cantor, ano)
-
-
+      elif resposta == '5':
+         cantor = input('Digite o cantor para pesquisar:')
+         filtrar_discos(cantor)
       else:
          print('Você digitou uma opçao invalida. Escola uma opcao de 1 a 4')
 else:
